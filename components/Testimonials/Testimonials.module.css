@@ -1,0 +1,20 @@
+#firstDepo{
+
+    background-image: url('./images/luanathogt.png');
+    background-size: cover;
+  
+}
+
+#secondDepo {
+
+    background-image: url('./images/wesleythogt.png');
+    background-size: cover;
+
+}
+
+#imageBackground{
+
+    background-image: url('./images/vectorschool.png');
+    background-size: cover;
+  
+}
