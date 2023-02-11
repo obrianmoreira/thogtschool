@@ -17,7 +17,7 @@ function Hero (props) {
                     twoColHeroTitleSize='text-blue-900 font-medium text-[40px] mb-[20px] lg:text-[80px]'
                     twoColHeroParag="Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Nesciunt itaque neque similique."
-                    twoColHeroParagSize='lg:text-[22px] lg:pb-8 lg:pr-32 text-blue-900 font-[325] mb-[20px] lg:mb-[0px]'
+                    twoColHeroParagSize='lg:text-[22px] lg:pb-8 lg:pr-32 text-blue-900 px-10 lg:px-0 font-[325] mb-[20px] lg:mb-[0px]'
                     buttonBollean={true}
                 />
             </div>

@@ -124,7 +124,7 @@ const DepoCard = (props) => {
                 { props.open ? (  
                                     
                     <div className='text-[16px] text-center font-light'>
-                        <p className='px-4'>{props.cardText}</p>   
+                        <p className='px-4 text-blue-900'>{props.cardText}</p>   
                     </div>
                     
                 ) : (
