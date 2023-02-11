@@ -8,7 +8,7 @@ import Layout from '../layout';*/
 
 const Navbar = () => {
     return (
-        <nav className="fixed left-0 top-0 w-full ease-in duration-300 bg-white border-solid shadow-md px-[120px]">
+        <nav className="fixed left-0 top-0 w-full ease-in duration-300 bg-slate-100 border-solid shadow-md px-[120px]">
             <div className='max-w-[1240px] m-auto flex justify-between items-center p-4'>
                 <div className='ml-[-110px] md:ml-[-80px]'>
                     <MyLogo

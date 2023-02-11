@@ -12,9 +12,8 @@ function Offer() {
                 <TwoColHero
                     twoColHeroTitle="Aprenda Inglês Praticando com Professor"
                     twoColHeroTitleSize='lg:text-[60px] text-[40px] text-white'
-                    twoColHeroParag="Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nesciunt itaque neque similique."
-                    twoColHeroParagSize='text-[20px] lg:text-[25px] pt-[16px] pb-[30px] text-white font-light'
+                    twoColHeroParag="Não perca tempo. Aperte o botão abaixo e faça uma aula experimental gratuita para comprovar nossa qualidade."
+                    twoColHeroParagSize='text-[20px] lg:text-[25px] pt-[16px] pb-[30px] px-10 lg:px-0 text-white font-light'
                     buttonBollean={true}
                 />
             </div>

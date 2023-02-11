@@ -15,8 +15,8 @@ function Method(props) {
                 <SecondOptionMethod
                 
                     secondTitle="The Thogt Method"
-                    secondPrag="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sapiente atque accusamus rerum, inventore adipisci voluptatibus? Consectetur eaque rerum officia eius error voluptatum vitae nemo id unde? Doloribus, est voluptatem."
-                    secondPartParag="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sapiente atque accusamus rerum, inventore adipisci voluptatibus? Consectetur eaque rerum officia eius error voluptatum vitae nemo id unde? Doloribus, est voluptatem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                    secondPrag="Estudar inglês sem apoio de um professor pode ser complicado e confuso, além disso, aulas em grupo podem ser estressantes e nos deixar encabulados. Foi pensando nisso que a Thogt School surgiu para dar um atendimento individualizado para você que precisa aprender inglês. "
+                    secondPartParag="Já imaginou ter um professor de inglês individual para você e que ensine com base na sua necessidade. Esta é a Thogt School, escola onde todo aluno tem um professor particular. Aulas práticas e sem enrolação com professores capacitados para explicar exatamente o que precisa para alcançar seus objetivos."
                 
                 />
             </div>
@@ -52,10 +52,10 @@ export const SecondOptionMethod = (props) => {
         <>
 
             <div className='grid lg:grid-cols-2 grid-cols-1 gap-0 lg:gap-10'>
-                <div className='text-left pt-10 text-[20px] font-light text-slate-950 lg:pr-24'>
+                <div className='text-left pt-8 text-[20px] font-light text-slate-950 lg:pr-20'>
                     <h1 className='lg:text-[0px] text-blue-900 font-medium lg:invisible visible text-[37px] text-center'>{props.secondTitle}</h1>
-                    <p className='mt-0 text-justify lg:text-left text-blue-900'>{props.secondPrag}</p> <br />
-                    <p className='text-justify lg:text-left text-blue-900'>{props.secondPartParag}</p>
+                    <p className='mt-0 text-justify lg:text-left text-black pt-10 lg:pt-0'>{props.secondPrag}</p> <br />
+                    <p className='text-justify lg:text-left text-black'>{props.secondPartParag}</p>
                 </div>
                 <div className='mt-[-20px] text-right'>
                     <h1 className='lg:text-[140px] text-blue-900 font-medium invisible lg:visible'>{props.secondTitle}</h1>

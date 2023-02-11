@@ -34,12 +34,12 @@ function Testimonials () {
 
     return (
 
-        <div className='pb-[20px] px-[40px] pt-10 pb-16 rounded-xl bg-blue-900'>
+        <div className='pb-[20px] px-[40px] pt-10 pb-16'>
             <div className='grid lg:grid-cols-4 lg:gap-4 gap-[30px]'>
                 <div className=' text-center lg:text-left mb-[-40px]'>
-                    <h1 className='text-[30px] lg:text-[35px] text-white font-medium'>Depoimento de Nossos Alunos</h1> <br />
-                    <p className='font-light text-white mb-[10px]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum quod aliquid illo quia culpa totam veritatis ab, kdiiddlldldl dododo.</p> <br />
-                    <button className='border-2 border-white text-white hover:bg-blue-700 rounded px-[0px] py-[0px] invisible lg:px-[30px] lg:py-[10px] lg:visible'>Saiba Mais</button>
+                    <h1 className='text-[30px] lg:text-[35px] text-blue-900 font-medium'>Depoimento de Nossos Alunos</h1> <br />
+                    <p className='font-light text-black mb-[10px] lg:pr-4 pr-0'>Nada melhor do que ouvir de quem faz aula na Thogt School. Veja ao lado a opinião de nossos ex e atuais alunos.</p> <br />
+                    <button className='border-2 border-blue-900 text-blue-900 hover:bg-blue-700 rounded px-[0px] py-[0px] invisible lg:px-[30px] lg:py-[10px] lg:visible'>Saiba Mais</button>
                 </div>
 
                 <div onClick={handleOpen} className="lg:pt-10">
@@ -103,8 +103,8 @@ const DepoCard = (props) => {
                                 height={120}
                             />
                         </div>
-                        <h3 className='text-[20px] font-medium'>{props.cardAuthor}</h3>
-                        <p className='text-[16px] font-normal'>{props.cardAuthorSub}</p> <br />
+                        <h3 className='text-[20px] font-medium text-blue-900'>{props.cardAuthor}</h3>
+                        <p className='text-[16px] font-normal text-black'>{props.cardAuthorSub}</p> <br />
                         { props.btnIcon ? (  
                                     
                             <div>
@@ -124,7 +124,7 @@ const DepoCard = (props) => {
                 { props.open ? (  
                                     
                     <div className='text-[16px] text-center font-light'>
-                        <p className='px-4 text-blue-900'>{props.cardText}</p>   
+                        <p className='px-4 text-black pt-4 lg:pt-0 px-6'>{props.cardText}</p>   
                     </div>
                     
                 ) : (

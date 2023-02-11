@@ -8,15 +8,14 @@ const Footer = () => {
 
     return (
 
-        <div className='lg:py-[50px] lg:mt-[0px] pb-[60px] pt-[5px]'>
-            <div className='grid grid-cols-1
-                    md:grid-cols-4 lg:gap-[200px]
-                    mt-[50px]
+        <div className=''>
+            <div className='grid grid-cols-1 pt-6
+                    md:grid-cols-1 
                     text-black text-center
                     '>
                 <div>
 
-                    <div className='lg:ml-[-20px] ml-[80px]'>
+                    <div className='lg:ml-[-20px] ml-28 flex justify-center item-center'>
                         
                         <MyLogo
                             imageSrc={logo}
@@ -26,32 +25,9 @@ const Footer = () => {
                     
                     </div> 
 
-                    <p className='font-light lg:text-left'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum excepturi ut cupiditate ratione autem. </p>
+                    <p className='font-light '>Todos os direitos reservados para Thogt Scool. Site criado por Brian Moreira. </p>
                     
                 </div>  
-                <div className='pt-6'>
-                    <FooterInfoLink
-                        footerTitle="Link"
-                        footerInfoOne='services'
-                        footerInfoTwo='Benefits'
-                        footerInfoThree='Promotion'
-                    />
-                </div>
-                <div className='pt-6'>
-                    <FooterInfo
-                        footerTitle='Contacts'
-                        footerInfoOne='(+31)68786-0673'
-                        footerInfoTwo='info@happycleaning.com'
-                    />
-                </div>
-                <div className='pt-6'>
-                    <FooterInfo
-                        footerTitle='About'
-                        footerInfoOne='History'
-                        footerInfoTwo='Values'
-                        footerInfoThree='Mission'
-                    />
-                </div>
             </div>
         </div>
 
@@ -94,7 +70,7 @@ export const FooterInfo = ({footerTitle, footerInfoOne, footerInfoTwo, footerInf
     return (
 
         <div>
-           <h2 className='text-[30px] mb-3'>{footerTitle}</h2>
+           <h2 className='text-[30px] mb-3 text-blue-900'>{footerTitle}</h2>
            <div className='underline font-light'>
                 <p className='lg:mb-2'>{footerInfoOne}</p>
                 <p className='lg:mb-2'>{footerInfoTwo}</p>
@@ -111,11 +87,11 @@ export const FooterInfoLink = ({footerTitle, footerInfoOne, footerInfoTwo, foote
     return (
 
         <div>
-           <h2 className='text-[30px] mb-3'>{footerTitle}</h2>
+           <h2 className='text-[30px] mb-3 text-blue-900'>{footerTitle}</h2>
            <div className='font-light'>
-                <p><Link href="">{footerInfoOne}</Link></p>
-                <p><Link href="">{footerInfoTwo}</Link></p>
-                <p><Link href="">{footerInfoThree}</Link></p>
+                <p><Link href="" className='hover:text-blue-900'>{footerInfoOne}</Link></p>
+                <p><Link href="" className='hover:text-blue-900'>{footerInfoTwo}</Link></p>
+                <p><Link href="" className='hover:text-blue-900'>{footerInfoThree}</Link></p>
            </div>
         </div>
 
