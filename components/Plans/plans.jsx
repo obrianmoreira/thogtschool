@@ -8,7 +8,7 @@ function Plans() {
         <div className="h-auto pt-[60px] pb-[30px] lg:pt-[120px] lg:pb-[120px]">
             <div className='lg:text-center text-center'>
                 <h1 className='text-[39px] lg:text-[60px] text-[30px] text-blue-900 font-medium'>Planos de Estudos</h1>
-                <p className='font-light pt-2'>Encontre abaixo o plano de estudos para você que melhor se encaixe em sua rotina e deixe a Thogt School fazer o resto.</p> <br />
+                <p className='font-light pt-2 text-black'>Encontre abaixo o plano de estudos para você que melhor se encaixe em sua rotina e deixe a Thogt School fazer o resto.</p> <br />
             </div>
             <div className="grid lg:grid-cols-3 grid-cols-1 gap-8 mt-4 text-center lg:text-left">
 
