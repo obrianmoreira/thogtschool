@@ -94,7 +94,7 @@ const DepoCard = (props) => {
 
         <>
         
-            <div className='grid lg:grid-cols-1 lg:gap-4 lg:shadow-md lg:mt-[0px] lg:border-t px-[0px] py-[25px] lg:py-10 rounded-xl hover:shadow-xl bg-white'>
+            <div className='grid lg:grid-cols-1 lg:gap-4 shadow-md lg:mt-[0px] border-t px-[0px] py-[25px] lg:py-10 rounded-xl hover:shadow-xl bg-white'>
                 
                 <div className='grid lg:grid-cols-1 lg:gap-4 text-center'>
                     <div>
