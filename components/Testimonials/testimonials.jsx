@@ -1,7 +1,8 @@
 import {AiOutlineArrowDown} from 'react-icons/ai';
 import { useState } from 'react';
 import style from '../Testimonials/Testimonials.module.css'
-import imgsrc from './images/luanathogt.png'
+import imgFirstStudent from './images/luanathogt.png'
+import imgSecondStudent from './images/alunowesley.png'
 import Image from 'next/image'
 import { MethodHeader, TwoColMethod } from '../Method/method';
 
@@ -45,6 +46,7 @@ function Testimonials () {
                 <div onClick={handleOpen} className="lg:pt-10">
                     <DepoCard
                         open={open}
+                        imgsrc={imgFirstStudent}
                         cardAuthor="Luana Pinheiro Coura"
                         cardAuthorSub="Aluna Thogt"
                         cardText="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo assumenda commodi aut, tenetur quas nihil nobis. Necessitatibus, quisquam sed recusandae explicabo saepe, repudiandae pariatur rem aperiam ducimus ratione impedit!"
@@ -54,7 +56,8 @@ function Testimonials () {
                 <div onClick={handleOpenTwo} className="lg:pt-10">
                     <DepoCard
                         open={openTwo}
-                        cardAuthor="Luana Pinheiro Coura"
+                        imgsrc={imgSecondStudent}
+                        cardAuthor="Wesley Mello"
                         cardAuthorSub="Aluna Thogt"
                         cardText="Loremssss ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo assumenda commodi aut, tenetur quas nihil nobis. Necessitatibus, quisquam sed recusandae explicabo saepe, repudiandae pariatur rem aperiam ducimus ratione impedit!"
                     />
@@ -64,6 +67,7 @@ function Testimonials () {
                 <div onClick={handleOpenThree} className="lg:pt-10">
                     <DepoCard
                         open={openThree}
+                        imgsrc={imgSecondStudent}
                         cardAuthor="Luana Pinheiro Coura"
                         cardAuthorSub="Aluna Thogt"
                         cardText="Loremssss ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo assumenda commodi aut, tenetur quas nihil nobis. Necessitatibus, quisquam sed recusandae explicabo saepe, repudiandae pariatur rem aperiam ducimus ratione impedit!"
@@ -98,12 +102,12 @@ const DepoCard = (props) => {
                         <div className='flex justify-center item-center'>
                             <Image
                                 className='rounded-full'
-                                src={imgsrc}
-                                width={120}
-                                height={120}
+                                src={props.imgsrc}
+                                width={96}
+                                height={96}
                             />
                         </div>
-                        <h3 className='text-[20px] font-medium text-blue-900'>{props.cardAuthor}</h3>
+                        <h3 className='text-[20px] font-medium text-blue-900 pt-2'>{props.cardAuthor}</h3>
                         <p className='text-[16px] font-normal text-black'>{props.cardAuthorSub}</p> <br />
                         { props.btnIcon ? (  
                                     

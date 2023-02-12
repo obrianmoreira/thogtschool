@@ -15,7 +15,7 @@ const Footer = () => {
                     '>
                 <div>
 
-                    <div className='lg:ml-[-20px] ml-28 flex justify-center item-center'>
+                    <div className='lg:ml-[-20px] flex justify-center item-center'>
                         
                         <MyLogo
                             imageSrc={logo}
@@ -25,7 +25,7 @@ const Footer = () => {
                     
                     </div> 
 
-                    <p className='font-light '>Todos os direitos reservados para Thogt Scool. Site criado por Brian Moreira. </p>
+                    <p className='font-light lgpx-0 px-20'>Todos os direitos reservados para Thogt Scool. Site criado por Brian Moreira. </p>
                     
                 </div>  
             </div>

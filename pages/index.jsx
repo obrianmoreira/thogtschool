@@ -46,19 +46,19 @@ export default function Home() {
 
         <div className='
           bg-white px-[40px]
-          lg:pl-14 lg:pr-14 lg:pt-24'>
+          lg:pl-14 lg:pr-14 lg:pt-20'>
           <Testimonials/>
         </div>
 
         <div className='
           bg-white px-[40px]
-          lg:pl-24 lg:pr-24 lg:pt-10'>
+          lg:pl-24 lg:pr-24 lg:pt-0'>
           <Plans/>
         </div>
 
         <div className='
-          bg-white px-[40px]
-          lg:pl-24 lg:pr-24 lg:pt-10'>
+          bg-white px-[40px] pb-20
+          lg:pl-24 lg:pr-24 lg:pb-8 lg:pt-10'>
             <Offer/>
         </div>
         

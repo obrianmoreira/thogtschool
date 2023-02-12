@@ -9,7 +9,7 @@ function Hero (props) {
 
         <div className='grid lg:grid-cols-2 grid-cols-1'>
             <div className='
-                lg:px-0 lg:text-left text-center
+                lg:px-0 lg:pt-32 lg:text-left text-center
                 md:pt-36 md:px-32
                 pt-32'>
                 <TwoColHero
