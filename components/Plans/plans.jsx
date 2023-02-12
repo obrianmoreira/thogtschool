@@ -87,7 +87,7 @@ const PriceCard = (props) => {
                     <ol>✓ {props.oL4TextPrice}</ol>
                 </ul>
                 <div>
-                    <button className='bg-blue-900 text-white border border-white rounded w-full py-[5px] hover:bg-blue-700'><a href="https://wa.me/+351968943125">Saiba Mais</a></button>
+                    <a href="https://wa.me/+351968943125"><button className='bg-blue-900 text-white border border-white rounded w-full py-[5px] hover:bg-blue-700'> Saiba Mais</button></a>
                 </div>
             </div>
         </div>

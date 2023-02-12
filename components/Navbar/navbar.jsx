@@ -45,6 +45,7 @@ export const MyLogo = ({imageSrc, widthLogo, heightLogo}) => {
 const MyNavbarLink = (props) => {
     const [nav, setNav] = useState(false);
     const [openNav, setOpenNava] = useState(props.openN);
+
     const handleNav = () => {
         setNav(!nav);
     }
@@ -81,11 +82,11 @@ const MyNavbarLink = (props) => {
                     : 'sm:hidden absolute top-20 mt-3 right-[-100%] right-0 bottom-0 flex justify-left items-left pl-8 w-full h-fit bg-blue-700 text-center ease-in duration-300'
                 }>
                 <ul className='text-white pt-4 pb-8'>
-                    <li className='p-4 text-[27px]'><Link href="#hero">Principal</Link></li>
-                    <li className='p-4 text-[27px]'><Link href="#metodo">Método Thogt</Link></li>
-                    <li className='p-4 text-[27px]'><Link href="#depo">Depoimentos</Link></li>
-                    <li className='p-4 text-[27px]'><Link href="#plans">Planos</Link></li>
-                    <li className='bg-white hover:bg-blue-700 hover:text-white rounded text-black text-[24px] border-solid w-36 pl-4 py-2 ml-4 mt-4'><a href="https://wa.me/+351968943125">Aula Free</a></li>
+                    <li className='p-4 text-[27px]'><Link href="#hero" onClick={(e) => setNav(!nav)}>Principal</Link></li>
+                    <li className='p-4 text-[27px]'><Link href="#metodo" onClick={(e) => setNav(!nav)}>Método Thogt</Link></li>
+                    <li className='p-4 text-[27px]'><Link href="#depo" onClick={(e) => setNav(!nav)}>Depoimentos</Link></li>
+                    <li className='p-4 text-[27px]'><Link href="#plans" onClick={(e) => setNav(!nav)}>Planos</Link></li>
+                    <li className='bg-white hover:bg-blue-700 hover:text-white rounded text-black text-[24px] border-solid w-36 pl-4 py-2 ml-4 mt-4' onClick={(e) => setNav(!nav)}><a href="https://wa.me/+351968943125">Aula Free</a></li>
                 </ul>
             </div>
             { openNav ? (  
