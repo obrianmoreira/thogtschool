@@ -54,8 +54,8 @@ export const SecondOptionMethod = (props) => {
             <div className='grid lg:grid-cols-2 grid-cols-1 gap-0 lg:gap-10'>
                 <div className='text-left pt-8 text-[20px] font-light text-slate-950 lg:pr-20'>
                     <h1 className='lg:text-[0px] text-blue-900 font-medium lg:invisible visible text-[37px] text-center'>{props.secondTitle}</h1>
-                    <p className='mt-0 text-justify lg:text-left text-black pt-10 lg:pt-0'>{props.secondPrag}</p> <br />
-                    <p className='text-justify lg:text-left text-black'>{props.secondPartParag}</p>
+                    <p className='mt-0 text-center lg:text-left text-black pt-10 lg:pt-0'>{props.secondPrag}</p> <br />
+                    <p className='text-center lg:text-left text-black'>{props.secondPartParag}</p>
                 </div>
                 <div className='mt-[-20px] text-right'>
                     <h1 className='lg:text-[140px] text-blue-900 font-medium invisible lg:visible'>{props.secondTitle}</h1>
