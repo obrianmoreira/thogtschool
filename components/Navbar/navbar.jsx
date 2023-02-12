@@ -68,7 +68,7 @@ const MyNavbarLink = (props) => {
                 <li className='bg-blue-900 hover:bg-blue-700 rounded text-white border-solid px-4 py-2' ><a href="https://wa.me/+351968943125">Aula Free</a></li>
             </ul>
             <div onClick={handleNav} className='block sm:hidden z-10'>
-                {nav ?  <AiOutlineClose size={20}/> : <AiOutlineMenu size={20}/>}
+                {nav ?  <AiOutlineClose size={20} color='black'/> : <AiOutlineMenu size={20} color='black'/>}
             </div>
             <div className={
                 nav
