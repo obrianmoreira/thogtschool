@@ -11,7 +11,7 @@ function Testimonials () {
     const [open, setOpen] = useState(true);
     const [openTwo, setOpenTwo] = useState(false);
     const [openThree, setOpenThree] = useState(false);
-    const [btnIcon, setBtnIcon] = useState(true);
+    const [btnIcon, setBtnIcon] = useState(false);
 
     const handleOpen = () => {
 
@@ -31,7 +31,6 @@ function Testimonials () {
         setOpenThree(!openThree)
 
     }
-
 
     return (
 
@@ -109,17 +108,15 @@ const DepoCard = (props) => {
                         </div>
                         <h3 className='text-[20px] font-medium text-blue-900 pt-2'>{props.cardAuthor}</h3>
                         <p className='text-[16px] font-normal text-black'>{props.cardAuthorSub}</p> <br />
-                        { props.btnIcon ? (  
+                        { props.open ? (  
                                     
-                            <div>
-                                <button className='bg-blue-900 text-white px-3 rounded-full py-1.5'>X</button>
-                            </div>
-                            
+                            <button className='bg-blue-900 text-white px-3 rounded-full py-1.5'>X</button>
+
+ 
                         ) : (
-                        
-                            <div>
-                                <button className='bg-blue-900 text-white px-3 rounded-full py-1.5'>+</button>
-                            </div>
+
+                            <button className='bg-blue-900 text-white px-3 rounded-full py-1.5'>+</button>
+
                         )}
                         
                     </div>
