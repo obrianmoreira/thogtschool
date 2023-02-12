@@ -85,7 +85,7 @@ const MyNavbarLink = (props) => {
                     <li className='p-4 text-[27px]'><Link href="#metodo">Método Thogt</Link></li>
                     <li className='p-4 text-[27px]'><Link href="#depo">Depoimentos</Link></li>
                     <li className='p-4 text-[27px]'><Link href="#plans">Planos</Link></li>
-                    <li className='bg-white hover:bg-blue-700 hover:text-white rounded text-black text-[24px] border-solid px-4 py-2 ml-4'><Link href="/">Free Hour</Link></li>
+                    <li className='bg-white hover:bg-blue-700 hover:text-white rounded text-black text-[24px] border-solid w-36 pl-4 py-2 ml-4 mt-4'><a href="https://wa.me/+351968943125">Aula Free</a></li>
                 </ul>
             </div>
             { openNav ? (  

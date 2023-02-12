@@ -41,7 +41,7 @@ function Testimonials () {
                 <div className=' text-center lg:text-left mb-[-40px]'>
                     <h1 className='text-[30px] lg:text-[35px] text-blue-900 font-medium'>Depoimento de Nossos Alunos</h1> <br />
                     <p className='font-light text-black mb-[10px] lg:pr-4 pr-0'>Nada melhor do que ouvir de quem faz aula na Thogt School. Veja ao lado a opinião de nossos ex e atuais alunos.</p> <br />
-                    <button className='px-10 py-3 rounded bg-white border-2 border-blue-900 hover:bg-blue-500 hover:text-white text-blue-900 transition ease-in-out delay-150 hover:scale-110 lg:px-[30px] lg:py-[10px] hidden lg:block'>Saiba Mais</button>
+                    <button className='px-10 py-3 rounded bg-white border-2 border-blue-900 hover:bg-blue-500 hover:text-white text-blue-900 transition ease-in-out delay-150 hover:scale-110 lg:px-[30px] lg:py-[10px] hidden lg:block'><a href="https://wa.me/+351968943125">Saiba Mais</a></button>
                 </div>
 
                 <div onClick={handleOpen} className="lg:pt-10">
