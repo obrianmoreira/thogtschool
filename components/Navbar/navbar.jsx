@@ -86,7 +86,7 @@ const MyNavbarLink = (props) => {
                     <li className='p-4 text-[27px]'><Link href="#metodo" onClick={(e) => setNav(!nav)}>Método Thogt</Link></li>
                     <li className='p-4 text-[27px]'><Link href="#depo" onClick={(e) => setNav(!nav)}>Depoimentos</Link></li>
                     <li className='p-4 text-[27px]'><Link href="#plans" onClick={(e) => setNav(!nav)}>Planos</Link></li>
-                    <li className='bg-white hover:bg-blue-700 hover:text-white rounded text-black text-[24px] border-solid w-36 pl-4 py-2 ml-4 mt-4' onClick={(e) => setNav(!nav)}><a href="https://wa.me/+351968943125">Aula Free</a></li>
+                    <li className='bg-white hover:bg-blue-700 hover:text-white rounded text-black text-[24px] border-solid w-36 pl-4 py-2 ml-4 mt-4' ><a href="https://wa.me/+351968943125">Aula Free</a></li>
                 </ul>
             </div>
             { openNav ? (  
