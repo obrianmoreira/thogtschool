@@ -33,30 +33,29 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className='
+        <div id='hero' className='
           bg-white pl-[20px] pr-[20px]
           lg:pl-24 lg:pr-40'>
           <Hero/>
         </div>
-        <div className='
+        <div id="metodo" className='
           bg-white px-[40px]
           lg:pl-24 lg:pr-20 lg:pt-24'>
           <Method/>
         </div>
-
-        <div className='
-          bg-white px-[40px]
+        <div id='depo' className='
+          bg-white
           lg:pl-14 lg:pr-14 lg:pt-20'>
           <Testimonials/>
         </div>
 
-        <div className='
+        <div id='plans' className='
           bg-white px-[40px]
           lg:pl-24 lg:pr-24 lg:pt-0'>
           <Plans/>
         </div>
 
-        <div className='
+        <div  className='
           bg-white px-[40px] pb-20
           lg:pl-24 lg:pr-24 lg:pb-8 lg:pt-10'>
             <Offer/>

@@ -12,6 +12,7 @@ function Testimonials () {
     const [openTwo, setOpenTwo] = useState(false);
     const [openThree, setOpenThree] = useState(false);
     const [btnIcon, setBtnIcon] = useState(false);
+    const [mouseHover, setMouseHover] = useState('');
 
     const handleOpen = () => {
 
@@ -32,6 +33,7 @@ function Testimonials () {
 
     }
 
+
     return (
 
         <div className='pb-[20px] px-[40px] pt-10 pb-16'>
@@ -39,7 +41,7 @@ function Testimonials () {
                 <div className=' text-center lg:text-left mb-[-40px]'>
                     <h1 className='text-[30px] lg:text-[35px] text-blue-900 font-medium'>Depoimento de Nossos Alunos</h1> <br />
                     <p className='font-light text-black mb-[10px] lg:pr-4 pr-0'>Nada melhor do que ouvir de quem faz aula na Thogt School. Veja ao lado a opinião de nossos ex e atuais alunos.</p> <br />
-                    <button className='border-2 border-blue-900 text-blue-900 hover:bg-blue-700 rounded px-[0px] py-[0px] invisible lg:px-[30px] lg:py-[10px] lg:visible'>Saiba Mais</button>
+                    <button className='px-10 py-3 rounded bg-white border-2 border-blue-900 hover:bg-blue-500 hover:text-white text-blue-900 transition ease-in-out delay-150 hover:scale-110 lg:px-[30px] lg:py-[10px] hidden lg:block'>Saiba Mais</button>
                 </div>
 
                 <div onClick={handleOpen} className="lg:pt-10">
@@ -115,7 +117,7 @@ const DepoCard = (props) => {
  
                         ) : (
 
-                            <button className='bg-blue-900 text-white px-3 rounded-full py-1.5'>+</button>
+                            <button className='bg-blue-900 text-white px-3 rounded-full py-1.5 hover:animate-bounce'>+</button>
 
                         )}
                         

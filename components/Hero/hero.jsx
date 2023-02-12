@@ -52,7 +52,7 @@ export const TwoColHero = (props) => {
                 </p>
                 { button ? (  
                         
-                    <button className='px-10 py-3 rounded bg-white border-2 border-blue-900 hover:bg-blue-500 hover:text-white text-blue-900'><a>Saiba Mais</a></button>
+                    <button className='px-10 py-3 rounded bg-white border-2 border-blue-900 hover:bg-blue-500 hover:text-white text-blue-900 transition ease-in-out delay-150 hover:scale-110'><a href='https://wa.me/+351968943125'>Saiba Mais</a></button>
                 
                 ) : (
                 
