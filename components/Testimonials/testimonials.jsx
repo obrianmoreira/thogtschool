@@ -57,8 +57,8 @@ function Testimonials () {
                 <div onClick={handleOpenTwo} className="lg:pt-10">
                     <DepoCard
                         open={openTwo}
-                        imgsrc={imgSecondStudent}
-                        cardAuthor="Wesley Mello"
+                        imgsrc={imgFirstStudent}
+                        cardAuthor="Joao Ricardo"
                         cardAuthorSub="Aluna Thogt"
                         cardText="Loremssss ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo assumenda commodi aut, tenetur quas nihil nobis. Necessitatibus, quisquam sed recusandae explicabo saepe, repudiandae pariatur rem aperiam ducimus ratione impedit!"
                     />
@@ -68,8 +68,8 @@ function Testimonials () {
                 <div onClick={handleOpenThree} className="lg:pt-10">
                     <DepoCard
                         open={openThree}
-                        imgsrc={imgSecondStudent}
-                        cardAuthor="Luana Pinheiro Coura"
+                        imgsrc={imgFirstStudent}
+                        cardAuthor="Claudio Pinheiro Coura"
                         cardAuthorSub="Aluna Thogt"
                         cardText="Loremssss ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo assumenda commodi aut, tenetur quas nihil nobis. Necessitatibus, quisquam sed recusandae explicabo saepe, repudiandae pariatur rem aperiam ducimus ratione impedit!"
                     />

@@ -1,6 +1,7 @@
-import { useState } from 'react'
-import {AiFillCheckCircle} from 'react-icons/ai'
-import { MethodHeader } from '../Method/method'
+import React, { useState } from 'react';
+import {AiFillCheckCircle} from 'react-icons/ai';
+import { MethodHeader } from '../Method/method';
+import ReactWhatsappButton from "react-whatsapp-button";
 
 function Plans() {
 
@@ -166,9 +167,6 @@ const PriceCalculator = (props) => {
 
     }
 
-    const handleDisabled = () => {
-    }
-
     return (
 
         <div className={props.cardStyle}>
@@ -220,13 +218,21 @@ const PriceCalculator = (props) => {
                     </div>
                 </ul>
                 <div className='grid grid-cols-2 gap-4'>
-                    <a ><button className='bg-blue-900 text-white border border-white rounded w-full py-[5px] hover:bg-blue-700' onClick={handleMath}>Calcular Plano</button></a>
-                    <a ><button className='bg-blue-900 text-white border border-white rounded w-full py-[5px] hover:bg-blue-700 disabled:opacity-25 disabled:hover:bg-blue-900' disabled={totalPrice === 0}>Gerar Proposta</button></a>
+                    <div>
+                        <a ><button className='bg-blue-900 text-white border border-white rounded w-full py-[5px] hover:bg-blue-700' onClick={handleMath}>Calcular Plano</button></a>
+                    </div>
+                    <div>
+                        <a href={`https://wa.me/+31687860673?text=Olá, gostaria de aulas ${daysOptions} vezes na semana com duração de ${hoursOption} minutos pelo preço mensal de €${totalPrice},00 e com ${totalDiscount}.`} ><button className='bg-blue-900 text-white border border-white rounded w-full py-[5px] hover:bg-blue-700 disabled:opacity-25 disabled:hover:bg-blue-900' disabled={totalPrice === 0}>Gerar Proposta</button></a>
+                    </div>
                 </div>
             </div>
         </div>
 
     )   
+
+    /**
+
+     */
 
 }
 
