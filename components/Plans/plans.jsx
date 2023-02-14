@@ -125,6 +125,9 @@ const PriceCalculator = (props) => {
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalDiscount, setTotalDiscount] = useState('€' + `${0}` + ',00 de Desconto')
 
+    const whatsAppNumber = '+31687721270'
+    const whatsAppText = `Olá, gostaria de aulas ${daysOptions} vezes na semana com duração de ${hoursOption} minutos pelo preço mensal de €${totalPrice},00 e ${totalDiscount}.`;
+
     let hourOne = 30;
     let hourTwo = 60;
     let hourThree = 90;
@@ -222,7 +225,7 @@ const PriceCalculator = (props) => {
                         <a ><button className='bg-blue-900 text-white border border-white rounded w-full py-[5px] hover:bg-blue-700' onClick={handleMath}>Calcular Plano</button></a>
                     </div>
                     <div>
-                        <a href={`https://wa.me/+31687860673?text=Olá, gostaria de aulas ${daysOptions} vezes na semana com duração de ${hoursOption} minutos pelo preço mensal de €${totalPrice},00 e com ${totalDiscount}.`} ><button className='bg-blue-900 text-white border border-white rounded w-full py-[5px] hover:bg-blue-700 disabled:opacity-25 disabled:hover:bg-blue-900' disabled={totalPrice === 0}>Gerar Proposta</button></a>
+                        <a href={`https://wa.me/${whatsAppNumber}?text=${whatsAppText}`} ><button className='bg-blue-900 text-white border border-white rounded w-full py-[5px] hover:bg-blue-700 disabled:opacity-25 disabled:hover:bg-blue-900' disabled={totalPrice === 0}>Gerar Proposta</button></a>
                     </div>
                 </div>
             </div>
