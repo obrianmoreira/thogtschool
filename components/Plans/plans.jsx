@@ -232,16 +232,17 @@ const PriceCalculator = (props) => {
                 <ul className='grid grid-cols-1 gap-4'>
                     <div className='grid grid-cols-2 gap-4'>
                         <div>
-                            <label htmlFor="name">Nome</label>
+                            <label  className='text-left'
+                            htmlFor="name">Nome</label>
                             <input className='rounded-md w-full pl-2 mt-2 text-black' id='name' value={nameLead} placeholder={'Ex: Joao'} onChange={e => setNameLead(e.target.value)}/>
                         </div>
                         <div>
-                            <label htmlFor="secondName">Segundo Nome</label>
+                            <label className='text-left' htmlFor="secondName">Segundo Nome</label>
                             <input className='rounded-md w-full pl-2 mt-2 text-black' id='secondName' value={surnameLead} placeholder={'Ex: Manuel'} onChange={e => setsurnameLead(e.target.value)}/>
                         </div>
                     </div>
                     <div>
-                        <label htmlFor="hours">Escola Duracao de Aula</label>
+                        <label className='text-left' htmlFor="hours">Escolha Duração de Aula</label>
                         <input className='rounded-md pl-4 w-full mt-2' onClick={handleOpenHourList} id='hours' placeholder={hoursOption} />
 
                         { openHourList ? 
@@ -268,7 +269,7 @@ const PriceCalculator = (props) => {
                         }
                     </div>
                     <div>
-                        <label htmlFor="days">Escola Dias de Aulas</label>
+                        <label className='text-left' htmlFor="days">Escolha os Dias de Aulas</label>
                         <input className='rounded-md pl-4 w-full mt-2' onClick={handleOpenDaysList} id='days' placeholder={daysOptions}/>
                         { openDaysList ? 
 
