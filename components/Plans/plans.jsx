@@ -242,7 +242,7 @@ const PriceCalculator = (props) => {
                     </div>
                     <div className='text-left'>
                         <label className='text-left' htmlFor="hours">Escolha Duração de Aula</label>
-                        <input className='rounded-md pl-4 w-full mt-2' onClick={handleOpenHourList} id='hours' placeholder={hoursOption} />
+                        <input className='rounded-md pl-4 w-full mt-2 bg-white text-white' onClick={handleOpenHourList} id='hours' placeholder={hoursOption} />
 
                         { openHourList ? 
 
@@ -269,7 +269,7 @@ const PriceCalculator = (props) => {
                     </div>
                     <div className='text-left'>
                         <label className='text-left' htmlFor="days">Escolha os Dias de Aulas</label>
-                        <input className='rounded-md pl-4 w-full mt-2' onClick={handleOpenDaysList} id='days' placeholder={daysOptions}/>
+                        <input className='rounded-md pl-4 w-full mt-2 bg-white text-white' onClick={handleOpenDaysList} id='days' placeholder={daysOptions}/>
                         { openDaysList ? 
 
                             <div className='bg-white grid grid-cols-1 mt-2 rounded-md w-ful pt-[5px]'>
