@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {AiFillCheckCircle} from 'react-icons/ai';
 import { MethodHeader } from '../Method/method';
 import ReactWhatsappButton from "react-whatsapp-button";
@@ -30,6 +30,18 @@ function Plans() {
                 </div>
 
                 <div>
+                    <PriceCalculator
+                    
+                        cardStyle="rounded-xl hover:shadow-lg hover:shadow-gray-500"
+                        cardHeadStyle="bg-blue-900 text-white px-10 pt-10 rounded-t-lg"
+                        cardBodyStyle="bg-blue-900 grid grid-cols-1 gap-8 px-10 pt-0 pb-10 text-white rounded-b-xl"
+                        h3TextPrice="Plano Personalizado"
+                        pTextPrice="Valor acima com desconto para maior frequência e duração de aula."
+                    
+                    />
+                </div>
+
+                <div>
                     <PriceCard
                         cardStyle="shadow-sm border border-slate-200 rounded-xl hover:shadow-xl"
                         cardHeadStyle="bg-white text-blue-900 px-10 pt-10 border-t border-gray-100 rounded-t-lg"
@@ -43,18 +55,6 @@ function Plans() {
                         oL4TextPrice="Exercícios para casa todos os dias"
                     />
                 </div>
-
-                <div>
-                    <PriceCalculator
-                    
-                        cardStyle="rounded-xl hover:shadow-lg hover:shadow-gray-500"
-                        cardHeadStyle="bg-blue-900 text-white px-10 pt-10 rounded-t-lg"
-                        cardBodyStyle="bg-blue-900 grid grid-cols-1 gap-8 px-10 pt-0 pb-10 text-white rounded-b-xl"
-                        h3TextPrice="Plano Personalizado"
-                        pTextPrice="Valor acima com desconto para maior frequência e duração de aula."
-                    
-                    />
-                </div>
                 
 
             </div>
@@ -63,28 +63,9 @@ function Plans() {
 
     )
 
-    /*
-    
-        <div>     
-            <PriceCard
-                cardStyle="rounded-xl hover:shadow-lg hover:shadow-gray-500"
-                cardHeadStyle="bg-blue-900 text-white px-10 pt-10 rounded-t-lg"
-                cardBodyStyle="bg-blue-900 grid grid-cols-1 gap-8 px-10 pt-0 pb-10 text-white rounded-b-xl"
-                h3TextPrice="Regular"
-                h1TextPrice="$50"
-                pTextPrice="Aulas 3 vezes na Semana Em Grupo."
-                oL1TextPrice="1 hora de aula com grupo de até 4 pessoas"
-                oL2TextPrice="Aulas para quem tem medo de falar inglês"
-                oL3TextPrice="Exercícios intensivos desde o básico"
-                oL4TextPrice="Atividades para casa em dias sem aula"
-            />
-        </div>
-    
-    
-    */
-
 }
 
+// The price card code for the other plans already with the difined price
 const PriceCard = (props) => {
 
     return (
@@ -118,45 +99,104 @@ const PriceCard = (props) => {
 
 const PriceCalculator = (props) => {
 
-    const [hoursOption, setHoursOptions] = useState(0)
-    const [daysOptions, setDaysOptions] = useState(0)
-    const [openHourList, setOpenHourList] = useState(false);
-    const [openDaysList, setOpenDaysList] = useState(false);
+    // Deals with the totalPrice area of the card
     const [totalPrice, setTotalPrice] = useState(0);
+
+    // Deals with the totalDiscount area of the card
     const [totalDiscount, setTotalDiscount] = useState('€' + `${0}` + ',00 de Desconto')
 
-    const whatsAppNumber = '+31687721270'
-    const whatsAppText = `Olá, gostaria de aulas ${daysOptions} vezes na semana com duração de ${hoursOption} minutos pelo preço mensal de €${totalPrice},00 e ${totalDiscount}.`;
+    // Deals with the amount of hours for each class
+    const [hoursOption, setHoursOptions] = useState(0)
 
-    let hourOne = 30;
-    let hourTwo = 60;
-    let hourThree = 90;
+    // Deals with the amount of days for each class
+    const [daysOptions, setDaysOptions] = useState(0)
 
-    let daysOne = 2;
-    let daysTwo = 3;
-    let daysThree = 5;
+    // Deals with the open and close of the dropdown  hour menu
+    const [openHourList, setOpenHourList] = useState(false);
 
+    // Deals with the open and close of the dropdown day menu
+    const [openDaysList, setOpenDaysList] = useState(false);
+
+    // Deals with the name of the lead
+    const [nameLead, setNameLead] = useState('');
+
+    // Deals with the name of the lead
+    const [surnameLead, setsurnameLead] = useState('');
+
+    // handleOpenHourList function: open or closes the dropdown menu
     const handleOpenHourList = () => {
 
         setOpenHourList(!openHourList)
 
     }
 
+    // handleOpenDaysList function: open or closes the dropdown menu
     const handleOpenDaysList = () => {
 
         setOpenDaysList(!openDaysList)
 
+    }
+
+    // Array of hours: the student can choose the amount of time of his classes
+    const hoursArray = [
+        {
+            text: `${30} minutos`
+        },
+
+        {
+            text: `${60} minutos`
+        },
+
+        {
+            text: `${90} minutos`
+        }
+    ]
+
+    // handleHour function: change the state of the input with the current hour chosen and closes the dropdown menu
+    const handleHour = (hours) => {
+
+        setHoursOptions(hours);
+        handleOpenHourList(!openHourList);
 
     }
 
+    // Array of days: the student can choose the amount of days of his classes
+    const daysArray = [
+        {
+            text: `${2} dias`
+        },
+
+        {
+            text: `${3} dias`
+        },
+
+        {
+            text: `${5} dias`
+        }
+    ]
+
+    // handleDay function: change the state of the input with the current day chosen and closes the dropdown menu
+    const handleDays = (days) => {
+
+        setDaysOptions(days);
+        handleOpenDaysList(!openDaysList);
+
+    }
+
+    // handleMath function: handles with the math of the card to give the price of the personalized plan
     const handleMath = () => {
 
-        let math = ((hoursOption * daysOptions) * 4 / 60) * 10
-        
-        let discount = 0;
+        let hourPrice = 10;
 
+        let hours = parseInt(hoursOption)
+        
+        let days = parseInt(daysOptions)
+
+        let math = ((hours * days) * 4 / 60) * hourPrice
+        
         if (math === 200){
             let discount = ((math*10)/100)
+            setNameLead()
             setTotalDiscount('€' + `${discount}` + ',00 de Desconto');
             setTotalPrice(math - discount);
         } else if (math === 300) {
@@ -169,6 +209,12 @@ const PriceCalculator = (props) => {
         }
 
     }
+
+    // WhatsApp number to send the personalized plan to our sales team
+    const whatsAppNumber = '+31687721270'
+
+    // WhatsApp text to send the personalized plan to our sales team undertands the sale oportunity
+    const whatsAppText = `Olá, ${nameLead} ${surnameLead}. Confirmamos que você gostaria de aulas ${daysOptions} vezes na semana com duração de ${hoursOption} minutos pelo preço mensal de €${totalPrice},00 e ${totalDiscount}.`;
 
     return (
 
@@ -184,38 +230,67 @@ const PriceCalculator = (props) => {
                     </div>
                 </div>
                 <ul className='grid grid-cols-1 gap-4'>
+                    <div className='grid grid-cols-2 gap-4'>
+                        <div>
+                            <label htmlFor="name">Nome</label>
+                            <input className='rounded-md w-full pl-2 mt-2 text-black' id='name' value={nameLead} placeholder={'Ex: Joao'} onChange={e => setNameLead(e.target.value)}/>
+                        </div>
+                        <div>
+                            <label htmlFor="secondName">Segundo Nome</label>
+                            <input className='rounded-md w-full pl-2 mt-2 text-black' id='secondName' value={surnameLead} placeholder={'Ex: Manuel'} onChange={e => setsurnameLead(e.target.value)}/>
+                        </div>
+                    </div>
                     <div>
                         <label htmlFor="hours">Escola Duracao de Aula</label>
-                        <input className='rounded-md pl-4 w-full mt-2' onClick={handleOpenHourList} id='hours' placeholder={`${hoursOption}` + ' minutos'}/>
-                        { openHourList ?
-                        
-                            <div className='bg-white grid grid-cols-1 mt-2 rounded-md w-full'>
-                                <button className='text-black hover:bg-blue-400 border-b-2 text-left pl-4' onClick={(e) => setHoursOptions(hourOne)}>{`${hourOne}` + ' minutos'}</button>
-                                <button className='text-black hover:bg-blue-400 border-b-2 text-left pl-4' onClick={(e) => setHoursOptions(hourTwo)}>{`${hourTwo}` + ' minutos'}</button>
-                                <button className='text-black hover:bg-blue-400 text-left pl-4' onClick={(e) => setHoursOptions(hourThree)}>{`${hourThree}` + ' minutos'}</button>
-                            </div>
-                            
-                        : 
-                        
-                            <></>    
+                        <input className='rounded-md pl-4 w-full mt-2' onClick={handleOpenHourList} id='hours' placeholder={hoursOption} />
 
+                        { openHourList ? 
+
+                            <div className='bg-white grid grid-cols-1 mt-2 rounded-md w-ful pt-[5px]'>
+
+                                {hoursArray.map((hours) => {
+
+                                    return (
+                                        <li className='text-black hover:bg-blue-400 border-t-2 text-left pl-4' onClick={() => handleHour(hours.text)}>{hours.text}</li>
+                                    )
+
+                                })}
+                                
+                            </div>
+            
+                        : 
+                            (
+                                
+                                <></>
+
+                            )
+                        
                         }
                     </div>
                     <div>
                         <label htmlFor="days">Escola Dias de Aulas</label>
                         <input className='rounded-md pl-4 w-full mt-2' onClick={handleOpenDaysList} id='days' placeholder={daysOptions}/>
-                        { openDaysList ?
-                        
-                            <div className='bg-white grid grid-cols-1 mt-2 rounded-md w-full'>
-                                <button className='text-black hover:bg-blue-400 border-b-2 text-left pl-4' onClick={(e) => setDaysOptions(daysOne)}>{daysOne}</button>
-                                <button className='text-black hover:bg-blue-400 border-b-2 text-left pl-4' onClick={(e) => setDaysOptions(daysTwo)}>{daysTwo}</button>
-                                <button className='text-black hover:bg-blue-400 text-left pl-4' onClick={(e) => setDaysOptions(daysThree)}>{daysThree}</button>
-                            </div>
-                            
-                        : 
-                        
-                            <></>    
+                        { openDaysList ? 
 
+                            <div className='bg-white grid grid-cols-1 mt-2 rounded-md w-ful pt-[5px]'>
+
+                                {daysArray.map((days) => {
+
+                                    return (
+                                        <li className='text-black hover:bg-blue-400 border-t-2 text-left pl-4' onClick={() => handleDays(days.text)}>{days.text}</li>
+                                    )
+
+                                })}
+                                
+                            </div>
+            
+                        : 
+                            (
+                                
+                                <></>
+
+                            )
+                        
                         }
 
                     </div>
@@ -236,143 +311,6 @@ const PriceCalculator = (props) => {
     /**
 
      */
-
-}
-
-const QuizApp = () => {
-
-    const [finalResult, setFinalResult] = useState(false);
-    const [score, setScore] = useState(0);
-    const [currentQuestion, setCurrentQuestion] = useState(0);
-
-    const questions = [
-        {
-          text: "What is the capital of America?",
-          options: [
-            { id: 0, text: "New York City", isCorrect: false },
-            { id: 1, text: "Boston", isCorrect: false },
-            { id: 2, text: "Santa Fe", isCorrect: false },
-            { id: 3, text: "Washington DC", isCorrect: true },
-          ],
-        },
-        {
-          text: "What year was the Constitution of America written?",
-          options: [
-            { id: 0, text: "1787", isCorrect: true },
-            { id: 1, text: "1776", isCorrect: false },
-            { id: 2, text: "1774", isCorrect: false },
-            { id: 3, text: "1826", isCorrect: false },
-          ],
-        },
-        {
-          text: "Who was the second president of the US?",
-          options: [
-            { id: 0, text: "John Adams", isCorrect: true },
-            { id: 1, text: "Paul Revere", isCorrect: false },
-            { id: 2, text: "Thomas Jefferson", isCorrect: false },
-            { id: 3, text: "Benjamin Franklin", isCorrect: false },
-          ],
-        },
-        {
-          text: "What is the largest state in the US?",
-          options: [
-            { id: 0, text: "California", isCorrect: false },
-            { id: 1, text: "Alaska", isCorrect: true },
-            { id: 2, text: "Texas", isCorrect: false },
-            { id: 3, text: "Montana", isCorrect: false },
-          ],
-        },
-        {
-          text: "Which of the following countries DO NOT border the US?",
-          options: [
-            { id: 0, text: "Canada", isCorrect: false },
-            { id: 1, text: "Russia", isCorrect: true },
-            { id: 2, text: "Cuba", isCorrect: true },
-            { id: 3, text: "Mexico", isCorrect: false },
-          ],
-        },
-      ];
-
-    const optionClicked = (isCorrect) => {
-
-        if (isCorrect) {
-
-            setScore(score + 1);
-
-        }
-
-        if (currentQuestion + 1 < questions.length) {
-
-            setCurrentQuestion(currentQuestion + 1);
-
-        } else {
-
-            setFinalResult(true)
-
-        }
-
-    }
-
-    const restartQuiz = () => {
-
-        setFinalResult(false);
-        setCurrentQuestion(0);
-        setScore(0);
-
-    }
-
-    return (
-
-        <div>
-
-            <h1>Current Score: {score}</h1>
-            
-            { finalResult ? 
-
-                <div>
-                    <h1>Resultado Final</h1>
-                    <p>{score} de {questions.length} - ({(score / questions.length) * 100}%)</p>
-                    <button onClick={restartQuiz}>Refazer</button>
-                </div> 
-            
-            : 
-                (
-                    <div className='grid grid-cols-1 px-40 text-center'>
-                        <div className='bg-slate-100 '>
-                            <h1>Pergunta : {currentQuestion + 1} de {questions.length}</h1>
-                        </div>
-                        <div>
-                            <ul>
-                                Aqui questions = the questions inside the array
-                                currentQuestion = the number of the question of the quiz that is changing dynamicly when the optionClicker method is fire
-                                {questions[currentQuestion].options.map((option) => {
-
-                                    return (
-
-                                        // Here the optionClicked method is accessing the option correct answer as an object, because the array we have created is the array of objects, isCorrect is a variable that stores true or false
-                                        <li key={option.id} onClick={() => optionClicked(option.isCorrect)}>{option.text}</li>
-
-                                    )
-
-                                })}
-                            </ul>
-                            <ul>
-                                {questions.map((option) => {
-                                    return (
-                                        <li key={option.id}>{option.text}</li>
-                                    )
-                                })}
-                            </ul>
-                        </div>
-                    </div> 
-
-                )
-            
-            }
-
-        </div>
-
-    )
 
 }
 
