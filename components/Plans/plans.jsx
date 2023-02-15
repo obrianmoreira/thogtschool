@@ -233,16 +233,16 @@ const PriceCalculator = (props) => {
                     <div className='grid grid-cols-2 gap-4 text-left'>
                         <div>
                             <label htmlFor="name">Nome</label>
-                            <input className='rounded-md w-full pl-2 mt-2 bg-white text-white' id='name' value={nameLead} placeholder={'Ex: Joao'} onChange={(e) => setNameLead(e.target.value)}/>
+                            <input className='rounded-md w-full pl-2 mt-2 bg-white text-black' id='name' value={nameLead} placeholder={'Ex: Joao'} onChange={(e) => setNameLead(e.target.value)}/>
                         </div>
                         <div>
                             <label htmlFor="secondName">Sobrenome</label>
-                            <input className='rounded-md w-full pl-2 mt-2 bg-white text-white' id='secondName' value={surnameLead} placeholder={'Ex: Manuel'} onChange={(e) => setsurnameLead(e.target.value)}/>
+                            <input className='rounded-md w-full pl-2 mt-2 bg-white text-black' id='secondName' value={surnameLead} placeholder={'Ex: Manuel'} onChange={(e) => setsurnameLead(e.target.value)}/>
                         </div>
                     </div>
                     <div className='text-left'>
                         <label className='text-left' htmlFor="hours">Escolha Duração de Aula</label>
-                        <input className='rounded-md pl-4 w-full mt-2 bg-white text-white' onClick={handleOpenHourList} id='hours' placeholder={hoursOption} />
+                        <input className='rounded-md pl-4 w-full mt-2 bg-white text-black' onClick={handleOpenHourList} id='hours' placeholder={hoursOption} />
 
                         { openHourList ? 
 
@@ -269,7 +269,7 @@ const PriceCalculator = (props) => {
                     </div>
                     <div className='text-left'>
                         <label className='text-left' htmlFor="days">Escolha os Dias de Aulas</label>
-                        <input className='rounded-md pl-4 w-full mt-2 bg-white text-white' onClick={handleOpenDaysList} id='days' placeholder={daysOptions}/>
+                        <input className='rounded-md pl-4 w-full mt-2 bg-white text-black' onClick={handleOpenDaysList} id='days' placeholder={daysOptions}/>
                         { openDaysList ? 
 
                             <div className='bg-white grid grid-cols-1 mt-2 rounded-md w-ful pt-[5px]'>
