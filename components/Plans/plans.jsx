@@ -232,13 +232,12 @@ const PriceCalculator = (props) => {
                 <ul className='grid grid-cols-1 gap-4'>
                     <div className='grid grid-cols-2 gap-4 text-left'>
                         <div>
-                            <label  className=''
-                            htmlFor="name">Nome</label>
-                            <input className='rounded-md w-full pl-2 mt-2 text-black' id='name' value={nameLead} placeholder={'Ex: Joao'} onChange={e => setNameLead(e.target.value)}/>
+                            <label htmlFor="name">Nome</label>
+                            <input className='rounded-md w-full pl-2 mt-2 bg-white text-white' id='name' value={nameLead} placeholder={'Ex: Joao'} onChange={(e) => setNameLead(e.target.value)}/>
                         </div>
                         <div>
-                            <label className='text-left' htmlFor="secondName">Sobrenome</label>
-                            <input className='rounded-md w-full pl-2 mt-2 text-black' id='secondName' value={surnameLead} placeholder={'Ex: Manuel'} onChange={e => setsurnameLead(e.target.value)}/>
+                            <label htmlFor="secondName">Sobrenome</label>
+                            <input className='rounded-md w-full pl-2 mt-2 bg-white text-white' id='secondName' value={surnameLead} placeholder={'Ex: Manuel'} onChange={(e) => setsurnameLead(e.target.value)}/>
                         </div>
                     </div>
                     <div className='text-left'>
