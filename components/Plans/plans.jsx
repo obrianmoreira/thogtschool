@@ -214,7 +214,7 @@ const PriceCalculator = (props) => {
     const whatsAppNumber = '+31687721270'
 
     // WhatsApp text to send the personalized plan to our sales team undertands the sale oportunity
-    const whatsAppText = `Olá, ${nameLead} ${surnameLead}. Confirmamos que você gostaria de aulas ${daysOptions} vezes na semana com duração de ${hoursOption} minutos pelo preço mensal de €${totalPrice},00 e ${totalDiscount}.`;
+    const whatsAppText = `Olá, sou ${nameLead} ${surnameLead}. Gostaria de confirmar o horário das aulas e meu plano personalizado de: ${daysOptions} aulas na semana com duração de ${hoursOption} minutos cada aula pelo preço mensal de €${totalPrice},00 e ${totalDiscount}. `;
 
     return (
 
