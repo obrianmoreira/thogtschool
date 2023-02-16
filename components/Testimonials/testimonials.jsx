@@ -3,32 +3,40 @@ import { useState } from 'react';
 import style from '../Testimonials/Testimonials.module.css'
 import imgFirstStudent from './images/luanathogt.png'
 import imgSecondStudent from './images/alunowesley.png'
+import imgThridStudent from './images/alunoelias.png'
 import Image from 'next/image'
 import { MethodHeader, TwoColMethod } from '../Method/method';
 
 function Testimonials () {
 
     const [open, setOpen] = useState(true);
-    const [openTwo, setOpenTwo] = useState(false);
-    const [openThree, setOpenThree] = useState(false);
+    const [openTwo, setOpenTwo] = useState(true);
+    const [openThree, setOpenThree] = useState(true);
+
+    const [depoOne, setDepoOne] = useState(false);
+    const [depoTwo, setDepoTwo] = useState(false);
+    const [depoThree, setDepoThree] = useState(false);
+    
     const [btnIcon, setBtnIcon] = useState(false);
     const [mouseHover, setMouseHover] = useState('');
 
-    const handleOpen = () => {
+    const handleShowDepo = () => {
 
+        setDepoOne(!depoOne)
         setOpen(!open)
-        setBtnIcon(!btnIcon)
 
     }
 
-    const handleOpenTwo = () => {
+    const handleShowDepoTwo = () => {
 
+        setDepoTwo(!depoTwo)
         setOpenTwo(!openTwo)
 
     }
 
-    const handleOpenThree = () => {
+    const handleShowDepoThree = () => {
 
+        setDepoThree(!depoThree)
         setOpenThree(!openThree)
 
     }
@@ -38,40 +46,48 @@ function Testimonials () {
 
         <div className='pb-[20px] px-[40px] pt-10 pb-16'>
             <div className='grid lg:grid-cols-4 lg:gap-4 gap-[30px]'>
-                <div className=' text-center lg:text-left mb-[-40px]'>
-                    <h1 className='text-[30px] lg:text-[35px] text-blue-900 font-medium'>Depoimento de Nossos Alunos</h1> <br />
-                    <p className='font-light text-black mb-[10px] lg:pr-4 pr-0'>Nada melhor do que ouvir de quem faz aula na Thogt School. Veja ao lado a opinião de nossos ex e atuais alunos.</p> <br />
-                    <button className='px-10 py-3 rounded bg-white border-2 border-blue-900 hover:bg-blue-500 hover:text-white text-blue-900 transition ease-in-out delay-150 hover:scale-110 lg:px-[30px] lg:py-[10px] hidden lg:block'><a href="https://wa.me/+351968943125">Saiba Mais</a></button>
+
+                <div>
+                    <div className='text-center lg:text-left lg:pb-5 lg:pt-14 lg:bg-blue-900 rounded-lg lg:pl-6'>
+                        <h1 className='text-[30px] lg:text-[35px] lg:text-white text-blue-900 font-medium'>Depoimento de Nossos Alunos</h1> <br />
+                        <p className='font-light lg:mb-[10px] lg:pr-4 pr-0 lg:text-white text-black'>Nada melhor do que ouvir de quem faz aula na Thogt School. Veja ao lado a opinião de nossos ex e atuais alunos.</p> <br />
+                    </div>
                 </div>
 
-                <div onClick={handleOpen} className="lg:pt-10">
+                <div onClick={handleShowDepo}>
                     <DepoCard
                         open={open}
+                        showDepo={depoOne}
                         imgsrc={imgFirstStudent}
-                        cardAuthor="Luana Pinheiro Coura"
+                        cardAuthor="Luana Coura"
                         cardAuthorSub="Aluna Thogt"
-                        cardText="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo assumenda commodi aut, tenetur quas nihil nobis. Necessitatibus, quisquam sed recusandae explicabo saepe, repudiandae pariatur rem aperiam ducimus ratione impedit!"
+                        cardText="Mano, agradeço pelas suas aulas!! Em menos de 2 meses eu consigo entender melhor meu patrão, suas aulas são fáceis de entender e por em prática sem dificuldade. Valeu irmão não sabe o quanto estou feliz de conseguir entender melhor o inglês, mas ainda tenho muito que aprender vou divulgar você para todos que precisarem da aula hahah"
+                        alt="Foto do aluno que está compartilhando depoimento de nossa escola"
                     />
                 </div>
 
-                <div onClick={handleOpenTwo} className="lg:pt-10">
+                <div onClick={handleShowDepoTwo}>
                     <DepoCard
                         open={openTwo}
-                        imgsrc={imgFirstStudent}
-                        cardAuthor="Joao Ricardo"
+                        showDepo={depoTwo}
+                        imgsrc={imgSecondStudent}
+                        cardAuthor="Wesley Mello"
                         cardAuthorSub="Aluna Thogt"
-                        cardText="Loremssss ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo assumenda commodi aut, tenetur quas nihil nobis. Necessitatibus, quisquam sed recusandae explicabo saepe, repudiandae pariatur rem aperiam ducimus ratione impedit!"
+                        cardText="Mano, agradeço pelas suas aulas!! Em menos de 2 meses eu consigo entender melhor meu patrão, suas aulas são fáceis de entender e por em prática sem dificuldade. Valeu irmão não sabe o quanto estou feliz de conseguir entender melhor o inglês, mas ainda tenho muito que aprender vou divulgar você para todos que precisarem da aula hahah"
+                        alt="Foto do aluno que está compartilhando depoimento de nossa escola"
                     />
                 </div>
                 
                 
-                <div onClick={handleOpenThree} className="lg:pt-10">
+                <div onClick={handleShowDepoThree}>
                     <DepoCard
                         open={openThree}
-                        imgsrc={imgFirstStudent}
-                        cardAuthor="Claudio Pinheiro Coura"
+                        showDepo={depoThree}
+                        imgsrc={imgThridStudent}
+                        cardAuthor="Elias Sobrenome"
                         cardAuthorSub="Aluna Thogt"
-                        cardText="Loremssss ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo assumenda commodi aut, tenetur quas nihil nobis. Necessitatibus, quisquam sed recusandae explicabo saepe, repudiandae pariatur rem aperiam ducimus ratione impedit!"
+                        cardText="Mano, agradeço pelas suas aulas!! Em menos de 2 meses eu consigo entender melhor meu patrão, suas aulas são fáceis de entender e por em prática sem dificuldade. Valeu irmão não sabe o quanto estou feliz de conseguir entender melhor o inglês, mas ainda tenho muito que aprender vou divulgar você para todos que precisarem da aula hahah"
+                        alt="Foto do aluno que está compartilhando depoimento de nossa escola"
                     />
                 </div>
 
@@ -96,44 +112,51 @@ const DepoCard = (props) => {
 
         <>
         
-            <div className='grid lg:grid-cols-1 lg:gap-4 shadow-md lg:mt-[0px] border-t px-[0px] py-[25px] lg:py-10 rounded-xl hover:shadow-xl bg-white'>
+            <div className='grid lg:grid-cols-1 lg:gap-4 shadow-md border-t px-[0px] py-[25px] lg:py-0 rounded-xl hover:shadow-xl bg-white'>
                 
                 <div className='grid lg:grid-cols-1 lg:gap-4 text-center'>
-                    <div>
-                        <div className='flex justify-center item-center'>
-                            <Image
-                                className='rounded-full'
-                                src={props.imgsrc}
-                                width={96}
-                                height={96}
-                            />
-                        </div>
-                        <h3 className='text-[20px] font-medium text-blue-900 pt-2'>{props.cardAuthor}</h3>
-                        <p className='text-[16px] font-normal text-black'>{props.cardAuthorSub}</p> <br />
-                        { props.open ? (  
+                    { props.open ? (  
                                     
-                            <button className='bg-blue-900 text-white px-3 rounded-full py-1.5'>X</button>
-
- 
-                        ) : (
-
-                            <button className='bg-blue-900 text-white px-3 rounded-full py-1.5 hover:animate-bounce'>+</button>
-
-                        )}
+                        <div className='lg:pt-8 lg:pb-8'>
+                            <div className='flex justify-center item-center'>
+                                <Image
+                                    className='rounded-full'
+                                    src={props.imgsrc}
+                                    width={96}
+                                    height={96}
+                                />
+                            </div>
+                            <h3 className='text-[20px] font-medium text-blue-900 pt-4'>{props.cardAuthor}</h3>
+                            <p className='text-[16px] font-normal text-black'>{props.cardAuthorSub}</p> <br />
+                            <button className='bg-blue-900 text-white px-3 rounded-full py-1.5'>+</button>
                         
-                    </div>
+                        </div>
+                        
+                    ) : (
+                    
+                        <></>
+                    )}
                 </div>
                 
-                { props.open ? (  
+                <div>
+                    { props.showDepo ? (  
                                     
-                    <div className='text-[16px] text-center font-light'>
-                        <p className='px-4 text-black pt-4 lg:pt-0 px-6'>{props.cardText}</p>   
+                    <div className='text-[16px] text-center font-light lg:pb-8 lg:pt-6'>
+                        <div className='grid lg:grid-cols-1 gap-4'>
+                            <div>
+                                <p className='px-4 text-black pt-4 lg:pt-0 '>{props.cardText}</p>   
+                            </div>
+                            <div>
+                                <button className='bg-blue-900 text-white pb-6 pl-2 pr-4 rounded-full w-[10px] h-[20px] mt-2'>X</button>
+                            </div>
+                        </div>
                     </div>
                     
                 ) : (
                 
                     <></>
                 )}
+                </div>
                 
             </div>
 

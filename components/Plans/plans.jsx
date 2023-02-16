@@ -20,7 +20,7 @@ function Plans() {
                         cardHeadStyle="bg-white text-blue-900 px-10 pt-10 border-t border-gray-100 rounded-lg"
                         cardBodyStyle="bg-white grid grid-cols-1 gap-8 px-10 pt-0 pb-10 text-blue-900 rounded-lg"
                         h3TextPrice="Grupo"
-                        h1TextPrice="$85"
+                        h1TextPrice="€85"
                         pTextPrice="Estude 3 Vezes na Semana Com Professor Particular."
                         oL1TextPrice="Aulas de 30 minutos personalizadas"
                         oL2TextPrice="O mesmo professor em todas as aulas"

@@ -24,6 +24,7 @@ function Hero (props) {
                 <Image
                     src={imgsrc}
                     layout="responsive"
+                    alt="Imagem aluna estudando desenhada"
                 />
             </div>
         </div>
